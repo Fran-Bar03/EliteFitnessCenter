@@ -1,0 +1,133 @@
+﻿body {
+    font-family: 'Muli', sans-serif;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.header-section {
+    background: #111;
+    padding: 20px 0;
+    text-align: center;
+}
+
+    .header-section .nav-menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+        .header-section .nav-menu ul li {
+            margin: 0 15px;
+        }
+
+            .header-section .nav-menu ul li a {
+                color: #fff;
+                text-decoration: none;
+                font-weight: 700;
+                font-size: 16px;
+            }
+
+                .header-section .nav-menu ul li a:hover {
+                    color: #ff6600;
+                }
+
+.breadcrumb-section {
+    background: url('image.png') no-repeat center center;
+    background-size: cover;
+    padding: 50px 0;
+    text-align: center;
+}
+
+    .breadcrumb-section .breadcrumb-text h2 {
+        font-size: 48px;
+        font-weight: 700;
+        color: #fff;
+    }
+
+    .breadcrumb-section .breadcrumb-text .bt-option a {
+        color: #ff6600;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .breadcrumb-section .breadcrumb-text .bt-option span {
+        color: #fff;
+        font-weight: 500;
+    }
+
+.schedule-section {
+    padding: 50px 0;
+    background: #000;
+}
+
+    .schedule-section .section-title {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+        .schedule-section .section-title span {
+            color: #ff6600;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .schedule-section .section-title h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin: 10px 0 0;
+        }
+
+.class-filter {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+    .class-filter button {
+        background: #111;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        margin: 0 5px;
+        cursor: pointer;
+        font-weight: 700;
+        transition: background 0.3s;
+    }
+
+        .class-filter button:hover {
+            background: #ff6600;
+        }
+
+.schedule-table {
+    width: 80%;
+    margin: 0 auto;
+    overflow-x: auto;
+}
+
+    .schedule-table table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .schedule-table table th,
+        .schedule-table table td {
+            border: 1px solid #444;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .schedule-table table th {
+            background: #222;
+            color: #ff6600;
+        }
+
+        .schedule-table table td {
+            background: #111;
+        }
+
+            .schedule-table table td.empty {
+                background: #000;
+            }
