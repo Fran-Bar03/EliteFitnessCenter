@@ -21,14 +21,24 @@ namespace EliteFitnessCenter
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
             //Creacion del inicio de sesion, y rediccionar al usuario a la pagina inicio en caso de ser diferente a nulo
             Usuario user = (Usuario)Session["user"];
-            if (user != null)
+
+            if (!IsPostBack)
+            {
+                // Cierra la sesión actual si el usuario regresa a la página de login
+                Session.Clear();
+                Session.Abandon();
+
+
+            }
+
+            else if (user != null)
             {
                 Response.Redirect("Inicio.aspx");
             }
         }
+
 
         protected void Ingresar_Click(object sender, EventArgs e)
         {
@@ -63,18 +73,19 @@ namespace EliteFitnessCenter
             if (dt.Rows.Count > 0)
             {
                 //Realiza la verificacion de la columna y filas en la BD
-                Usuario us = new Usuario(dt.Rows[0].ItemArray[5].ToString(), dt.Rows[0].ItemArray[6].ToString(), Convert.ToInt32(dt.Rows[0].ItemArray[10]));
-
+                Usuario user = new Usuario(dt.Rows[0].ItemArray[5].ToString(), dt.Rows[0].ItemArray[6].ToString(), Convert.ToInt32(dt.Rows[0].ItemArray[10]));
+                
                 //Para verificar si el email escrito esta en la BD
-                if (email.Text == us.Email)
+                if (email.Text == user.Email)
                 {
-                    if (pass.Text == us.Contraseña)
+                    if (pass.Text == user.Contraseña)
                     {
                         // Si la contrasena introducida es igual a la de BD, se abrira la sesion y lo mandara al inicio
-                        Session["Usuario"] = us;
+                        Session["user"] = user;
+                        Response.Write("<scripta>alert('"+user.Tipo_Usuario.ToString()+"')</script>");
                         Response.Redirect("Inicio.aspx");
                     }
-
+                    
                     else
                     {
                         Lbmensaje.Text = "Contraseña incorrecta";
@@ -91,6 +102,7 @@ namespace EliteFitnessCenter
             {
                 Lbmensaje.Text = "Usuario no registrado";
             }
+            conngym.Close();
 
         }
     }
