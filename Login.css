@@ -33,19 +33,17 @@
 .form-container {
     position: relative;
     z-index: 2;
-    width: 400px;
-    padding: 40px;
+    padding: 2.5%;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    text-decoration: none;
 }
 
 .join-button {
-    padding: 30px;
-    font-size: 20px;
+    padding: 2.5%;
+    font-size: 1.25rem;
     border: none;
     border-radius: 5px;
     background: #d75d00;
@@ -55,15 +53,15 @@
 
 .navigation {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 2%;
+    right: 2%;
     display: flex;
-    gap: 20px;
+    gap: 2%;
     z-index: 2;
 }
 
-    .navigation a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 16px;
-    }
+.navigationa {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}

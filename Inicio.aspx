@@ -62,11 +62,10 @@
                                 <li><a href="Horario.aspx">Clases</a></li>
                                 <li><a href="Calculadora.aspx">IMC Calculadora</a></li>
                                 <li><a href="Contactanos.aspx">Contactanos</a></li>
-                                 <li><a href="Usuarios.aspx">Usuarios</a></li>
+                                <li id="UsuariosLink" runat="server"><a href="Usuarios.aspx">Usuarios</a></li>
                              </ul>
                          </nav>
                      </div>
- 
 
                  <div class="canvas-open">
                      <i class="fa fa-bars"></i>
