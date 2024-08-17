@@ -37,9 +37,14 @@
             <div class="form-group">
                 <label for="cvv">Código de seguridad:</label>
                 <input id="cvv" type="text" placeholder="123" runat="server" required />
+                <div class="form-group">
+                    <label for="paymentMethod">Método de Pago:</label>
+                   <asp:TextBox ID="Metodopago" runat="server"></asp:TextBox>
+                </div>
             </div>
            <asp:Button ID="Pagar" runat="server" Text="Pagar" type="submit" class="pay-button" OnClick="Pagar_Click"/>
             <div class="security-notice">
+
                 <p>Tus pagos se realizan de forma segura</p>
                 <a href="Inicio.aspx" runat="server">Cancelar</a>
             </div>

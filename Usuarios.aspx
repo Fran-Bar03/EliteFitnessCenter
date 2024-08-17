@@ -23,6 +23,7 @@
                 <option value="cliente">Cliente</option>
                 <option value="empleado">Empleado</option>
             </select>
+
             <button class="btn btn-primary">Buscar</button>
         </div>
         <div class="table-container">

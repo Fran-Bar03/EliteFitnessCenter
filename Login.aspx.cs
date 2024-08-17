@@ -82,7 +82,7 @@ namespace EliteFitnessCenter
                     {
                         // Si la contrasena introducida es igual a la de BD, se abrira la sesion y lo mandara al inicio
                         Session["user"] = user;
-                        Response.Write("<scripta>alert('"+user.Tipo_Usuario.ToString()+"')</script>");
+
                         Response.Redirect("Inicio.aspx");
                     }
                     
