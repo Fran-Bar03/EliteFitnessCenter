@@ -1,7 +1,10 @@
 ﻿body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #000;
+    background-image: url('img/gymshark.png') !important;
+    background-size: cover;
+    background-position: revert-layer;
+    background-repeat: no-repeat;
     color: #fff;
     height: 100vh;
     display: flex;
@@ -10,14 +13,12 @@
 }
 
 .container {
-    position: relative;
-    width: 100%;
-    height: 100%;
+    position: static;
+    width: 0%;
+    height: 0%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url('img/Gymshark.png') no-repeat center center;
-    background-size: cover;
+    justify-content: normal;
+    align-items: normal;
 }
 
 .overlay {
@@ -33,35 +34,72 @@
 .form-container {
     position: relative;
     z-index: 2;
-    padding: 2.5%;
+    width: 400px;
+    padding: 40px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
 }
 
-.join-button {
-    padding: 2.5%;
-    font-size: 1.25rem;
-    border: none;
-    border-radius: 5px;
-    background: #d75d00;
-    color: #fff;
-    cursor: pointer;
-}
+    .form-container h1 {
+        color: #d75d00;
+        margin-bottom: 30px;
+    }
+
+    .form-container form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-container input {
+        margin-bottom: 20px;
+        padding: 15px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background: #333;
+        color: #fff;
+    }
+
+    .form-container button {
+        padding: 15px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background: #d75d00;
+        color: #fff;
+        cursor: pointer;
+        position: center;
+    }
 
 .navigation {
-    position: absolute;
-    top: 2%;
-    right: 2%;
+    position: center;
+    top: 20px;
+    right: 20px;
     display: flex;
-    gap: 2%;
+    gap: 20px;
     z-index: 2;
 }
 
-.navigationa {
-    color: #fff;
+    .navigation a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+.form-container p {
+    margin-top: 20px;
+    color: #aaa;
+}
+
+.form-container a {
+    color: #ee6802;
     text-decoration: none;
-    font-size: 1rem;
+}
+
+.link-label {
+    position: absolute;
+    z-index: 3;
 }

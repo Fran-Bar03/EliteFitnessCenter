@@ -6,7 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
    <title>Gymshark Password Recovery</title>
-<link rel="stylesheet" href="RecuperarContraseña.css"/>
+    <link href="RecuperarContraseña.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">

@@ -18,14 +18,14 @@
          </div>
          <h1>Log In</h1>
          <div action="#" method="post">
-             <asp:Textbox ID="email" runat="server"></asp:Textbox>
-             <asp:Textbox ID="pass" runat="server"></asp:Textbox>
-             <asp:Button ID="btningresar" runat="server" Text="Ingresar" OnClick="Ingresar_Click" />
+             <asp:Textbox ID="email" placeholder="E-mail" runat="server" ></asp:Textbox>
+             <asp:Textbox ID="pass" placeholder="Password" runat="server"></asp:Textbox>
+             <asp:Button ID="Button1" runat="server" Text="Ingresar" PostBackUrl="~/Inicio.aspx" />
              <asp:Label ID="Lbmensaje" runat="server" Text="" Font-bold="true" forecolor="Orange"></asp:Label>
          </div>
          </div>
      </div>
-     <p >Did you forget your password? <a href="RecuperarContraseña.html">Recover Password</a></p>
+     <p class="link-label">Olvidaste tu contraseña? <a href="RecuperarContraseña.aspx">Recuperar Contraseña</a></p>
         </div>
     </form>
 </body>
