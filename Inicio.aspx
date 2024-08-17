@@ -173,7 +173,7 @@
                              <div class="ci-text">
                                  <span>FORTALEZA</span>
                                  <h5>Levantamiento de pesas</h5>
-                                 <a href="Horario.aspx"><i class="fa fa-angle-right"></i></a>
+                                 <a href="Clases.aspx"><i class="fa fa-angle-right"></i></a>
                              </div>
                          </div>
                      </div>
@@ -197,7 +197,7 @@
                              <div class="ci-text">
                                  <span>FORTALEZA</span>
                                  <h5>Levantamiento de pesas rusas</h5>
-                                 <a href="Horario.aspx"><i class="fa fa-angle-right"></i></a>
+                                 <a href="Clases.aspx"><i class="fa fa-angle-right"></i></a>
                              </div>
                          </div>
                      </div>
@@ -209,7 +209,7 @@
                              <div class="ci-text">
                                  <span>CARDIO</span>
                                  <h4>Indoor cycling</h4>
-                                 <a href="Horario.aspx"><i class="fa fa-angle-right"></i></a>
+                                 <a href="Clases.aspx"><i class="fa fa-angle-right"></i></a>
                              </div>
                          </div>
                      </div>
@@ -221,7 +221,7 @@
                              <div class="ci-text">
                                  <span>ENTRENAMIENTO</span>
                                  <h4>Box</h4>
-                                 <a href="Horario.aspx"><i class="fa fa-angle-right"></i></a>
+                                 <a href="Clases.aspx"><i class="fa fa-angle-right"></i></a>
                              </div>
                          </div>
                      </div>

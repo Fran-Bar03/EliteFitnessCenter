@@ -33,6 +33,7 @@ namespace EliteFitnessCenter
             //Creacion de nuestra tabla
             DataTable dataTable = new DataTable();
 
+
             //si la conexion no esta abierta
             if (conngym.State == 0) 
 
@@ -40,9 +41,11 @@ namespace EliteFitnessCenter
             {
                 conngym.Open();
             }
-
+            
             cmd.Connection = conngym;
             cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "Ins_Membresia1";
+            
             
 
         }
