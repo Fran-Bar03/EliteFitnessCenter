@@ -1,89 +1,263 @@
-﻿body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+﻿/* General styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: #f7f7f7;
     margin: 0;
     padding: 0;
 }
 
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
+/* Preloader */
+#preloder {
+    background: #fff;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.breadcrumb-section {
-    padding: 40px 0;
-    background: #f9f9f9;
-    text-align: center;
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
 }
 
-    .breadcrumb-section h2 {
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Offcanvas menu */
+.offcanvas-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9;
+    display: none;
+}
+
+.offcanvas-menu-wrapper {
+    position: fixed;
+    top: 0;
+    right: -370px;
+    height: 100%;
+    width: 370px;
+    background: #fff;
+    z-index: 10;
+    padding: 40px;
+    box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s;
+}
+
+    .offcanvas-menu-wrapper .canvas-close {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .offcanvas-menu-wrapper .canvas-search i {
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    .offcanvas-menu-wrapper nav ul {
+        list-style: none;
+        padding: 0;
         margin: 0;
     }
 
-    .breadcrumb-section .bt-option a {
-        text-decoration: none;
-        color: #333;
+        .offcanvas-menu-wrapper nav ul li {
+            margin-bottom: 20px;
+        }
+
+            .offcanvas-menu-wrapper nav ul li a {
+                color: #333;
+                text-decoration: none;
+                font-size: 16px;
+                text-transform: uppercase;
+            }
+
+/* Header section */
+.header-section {
+    background: #222;
+    padding: 10px 0;
+}
+
+    .header-section .logo {
+        float: left;
     }
 
+        .header-section .logo img {
+            max-width: 100px;
+        }
+
+    .header-section .nav-menu {
+        float: left;
+        margin-left: 50px;
+    }
+
+        .header-section .nav-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+            .header-section .nav-menu ul li {
+                margin-right: 30px;
+            }
+
+                .header-section .nav-menu ul li a {
+                    color: #fff;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    font-size: 14px;
+                }
+
+    .header-section .canvas-open {
+        float: right;
+        font-size: 20px;
+        color: #fff;
+        cursor: pointer;
+    }
+
+/* Breadcrumb section */
+.breadcrumb-section {
+    background-size: cover;
+    background-position: center center;
+    padding: 100px 0;
+}
+
+    .breadcrumb-section .breadcrumb-text {
+        text-align: center;
+        color: #fff;
+    }
+
+        .breadcrumb-section .breadcrumb-text h2 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb-section .breadcrumb-text .bt-option {
+            font-size: 16px;
+        }
+
+            .breadcrumb-section .breadcrumb-text .bt-option a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+/* BMI Calculator section */
 .bmi-calculator-section {
-    padding: 40px 0;
+    padding: 100px 0;
+}
+
+.section-title {
+    margin-bottom: 30px;
+}
+
+    .section-title span {
+        display: block;
+        font-size: 18px;
+        color: #333;
+        text-transform: uppercase;
+    }
+
+    .section-title h2 {
+        font-size: 36px;
+        color: #333;
+        margin: 10px 0;
+    }
+
+.chart-table {
     background: #fff;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
 }
 
-    .bmi-calculator-section .section-title {
-        text-align: center;
-        margin-bottom: 40px;
+    .chart-table table {
+        width: 100%;
+        border-collapse: collapse;
     }
 
-    .bmi-calculator-section .chart-table,
-    .bmi-calculator-section .chart-calculate-form {
-        text-align: center;
+        .chart-table table th,
+        .chart-table table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .chart-table table th {
+            background: #f5f5f5;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        .chart-table table .point {
+            color: #ff5722;
+        }
+
+.chart-calculate-form {
+    background: #fff;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+    .chart-calculate-form form {
+        margin-top: 20px;
     }
 
-.chart-table table {
-    margin: auto;
-    width: 100%;
-    border-collapse: collapse;
-}
+        .chart-calculate-form form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
 
-.chart-table th, .chart-table td {
-    padding: 10px;
-    border: 1px solid #ddd;
-}
+        .chart-calculate-form form button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background: #ff5722;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-.chart-calculate-form input,
-.chart-calculate-form select,
-.chart-calculate-form button {
-    padding: 10px;
-    margin: 5px;
-    font-size: 1em;
-    width: calc(50% - 22px);
-    box-sizing: border-box;
-}
-
-.chart-calculate-form button {
-    width: 100%;
-    background-color: #5cb85c;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-    .chart-calculate-form button:hover {
-        background-color: #4cae4c;
+/* Responsive styles */
+@media (max-width: 991px) {
+    .header-section .nav-menu {
+        display: none;
     }
 
-#result-box {
-    margin-top: 20px;
-    padding: 15px;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    text-align: center;
-    font-size: 1.2em;
-}
+    .header-section .canvas-open {
+        display: block;
+    }
 
-#result {
-    font-weight: bold;
+    .offcanvas-menu-overlay,
+    .offcanvas-menu-wrapper {
+        display: block;
+    }
 }
