@@ -70,6 +70,7 @@
     <Content Include="AgregarClase.aspx" />
     <Content Include="agregarclase.css" />
     <Content Include="Calculadora.aspx" />
+    <Content Include="Calculadora.css" />
     <Content Include="Clases.aspx" />
     <Content Include="Clases.css" />
     <Content Include="Contactanos.aspx" />

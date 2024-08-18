@@ -18,11 +18,13 @@
         </div>
         <div class="search-bar">
             <input type="text" class="form-control" placeholder="Buscar por nombre o correo...">
-            <select class="form-control">
-                <option value="all">Todos</option>
-                <option value="cliente">Cliente</option>
-                <option value="empleado">Empleado</option>
-            </select>
+
+            <!-- filtro para buscar por tipo usuario -->
+            <asp:DropDownList ID="DropDownList_Filtro" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList_Filtro_SelectedIndexChanged">
+            <asp:ListItem Text="Todos" Value="0"></asp:ListItem>
+            <asp:ListItem Text="Cliente" Value="2"></asp:ListItem>
+            <asp:ListItem Text="Administrador" Value="1"></asp:ListItem>
+            </asp:DropDownList>
 
             <button class="btn btn-primary">Buscar</button>
         </div>
