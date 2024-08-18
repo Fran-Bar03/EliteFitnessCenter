@@ -1,7 +1,8 @@
 ﻿body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #000;
+    background: url('img/Gymshark.png') no-repeat center center fixed;
+    background-size: cover;
     color: #fff;
     height: 100vh;
     display: flex;
@@ -11,13 +12,12 @@
 
 .container {
     position: relative;
-    width: 100%;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('img/Gymshark.png') no-repeat center center;
-    background-size: cover;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
 }
 
 .overlay {
@@ -40,7 +40,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 350px;
+    width: 100%;
 }
 
 h1 {

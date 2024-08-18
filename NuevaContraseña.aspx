@@ -11,14 +11,15 @@
 <body>
     <form id="form1" runat="server">
         <div class="overlay"></div>
- <div class="container">
-     <div class="form-container">
-         <h1>New Password</h1>
-         <form>
-             <input type="text" placeholder="Code" required>
-             <input type="password" placeholder="New Password" required>
-             <button type="submit">Set Up</button>
-         </form>
+        <div class="container">
+            <div class="form-container">
+                <h1>AVISO</h1>
+                <div class="message-box">
+                    <p>Su consulta será verificada en los próximos minutos. Un administrador lo llamará al número de celular asociado a su correo electrónico para ayudarlo a recuperar su contraseña. Esté atento...</p>
+                </div>
+                  Volver al inicio de sesión <a href="Login.aspx">Iniciar sesión</a>
+            </div>
+        </div>
     </form>
 </body>
 </html>

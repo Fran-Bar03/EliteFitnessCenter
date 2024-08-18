@@ -17,15 +17,16 @@
                 </div>
                 <h1>Log In</h1>
                 <div class="form-group">
-                    <asp:TextBox ID="email" runat="server" CssClass="input-field" placeholder="Email"></asp:TextBox>
+                    <asp:TextBox ID="email" runat="server" CssClass="input-field" placeholder="Correo electrónico"></asp:TextBox>
                 </div>
                 <div class="form-group">
-                    <asp:TextBox ID="pass" runat="server" CssClass="input-field" TextMode="Password" placeholder="Password"></asp:TextBox>
+                    <asp:TextBox ID="pass" runat="server" CssClass="input-field" TextMode="Password" placeholder="Contraseña"></asp:TextBox>
                 </div>
                 <asp:Button ID="btningresar" runat="server" Text="Ingresar" CssClass="btn-ingresar" OnClick="Ingresar_Click" />
                 <asp:Label ID="Lbmensaje" runat="server" Text="" Font-Bold="true" ForeColor="Orange"></asp:Label>
                 <p class="forgot-password">
-                    Did you forget your password? <a href="RecuperarContraseña.aspx">Recover Password</a>
+                    ¿Olvidase tu contraseña? <a href="RecuperarContraseña.aspx">Recuperar contraseña</a>
+                ¿Aun no tienes cuenta? <a href="Registrarse.aspx">Registrarse</a>
                 </p>
             </div>
         </div>

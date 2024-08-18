@@ -15,14 +15,25 @@
     <div class="form-container">
         <div class="logo">
         </div>
-        <h1>Create New Account</h1>
-        <form>
-            <input type="text" placeholder="Name" required>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Password" required>
-            <button type="submit">SIGN UP</button>
-        </form>
-        <p >Already Registered? <a href="Login.html">Login</a></p>
+        <h1>Crear nueva cuenta</h1>
+       
+
+        <asp:TextBox ID="nombre" runat="server" placeholder="Nombre"></asp:TextBox>
+        <asp:TextBox ID="apaterno" runat="server" placeholder="Apellido Paterno"></asp:TextBox>
+        <asp:TextBox ID="amaterno" runat="server" placeholder="Apellido Materno"></asp:TextBox>
+        <asp:TextBox ID="fechanac" runat="server" placeholder="Fecha de Nacimiento"></asp:TextBox>
+        <asp:TextBox ID="email" runat="server" placeholder="Email"></asp:TextBox>
+        <asp:TextBox ID="pass" runat="server" placeholder="Contraseña"></asp:TextBox>
+         <asp:TextBox ID="cel" runat="server" placeholder="Celular"></asp:TextBox>
+         <asp:TextBox ID="peso" runat="server" placeholder="Peso(kg)"></asp:TextBox>
+         <asp:TextBox ID="altura" runat="server" placeholder="Altura (cm)"></asp:TextBox>
+        
+            <asp:Button ID="registar" runat="server" Text="Registrarse" OnClick="registar_Click" /> 
+
+        <asp:Label ID="lbmensaje" runat="server" Text="" Font-Bold="true" ForeColor="Orange"></asp:Label>
+        
+        <p >¿Ya estas registrado? <a href="Login.aspx">Iniciar Sesión</a></p>
+           </div>
     </form>
 </body>
 </html>

@@ -13,10 +13,12 @@
        <div class="overlay"></div>
 <div class="container">
     <div class="form-container">
-        <h1>You Forgot Your Password</h1>
+        <h1>Introduzca su Email</h1>
         <form>
-            <input type="email" placeholder="Email" required>
-            <button type="submit">Set Up</button>
+            <asp:TextBox ID="Eemail" type="Email" runat="server" placeholder="Email"></asp:TextBox>
+             <asp:TextBox ID="Mensaje"  runat="server" placeholder="Motivo"></asp:TextBox>
+            <asp:Button ID="lbenviar" runat="server" Text="Enviar" OnClick="lbenviar_Click"/>
+             Volver al inicio de sesión <a href="Login.aspx">Iniciar sesión</a>
         </form>
     </form>
 </body>
