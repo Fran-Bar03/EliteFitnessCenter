@@ -21,7 +21,7 @@
         <asp:TextBox ID="nombre" runat="server" placeholder="Nombre"></asp:TextBox>
         <asp:TextBox ID="apaterno" runat="server" placeholder="Apellido Paterno"></asp:TextBox>
         <asp:TextBox ID="amaterno" runat="server" placeholder="Apellido Materno"></asp:TextBox>
-        <asp:TextBox ID="fechanac" runat="server" placeholder="Fecha de Nacimiento"></asp:TextBox>
+        <asp:TextBox ID="fechanac" runat="server" placeholder="dd/MM/yyyy"></asp:TextBox>
         <asp:TextBox ID="email" runat="server" placeholder="Email"></asp:TextBox>
         <asp:TextBox ID="pass" runat="server" placeholder="Contraseña"></asp:TextBox>
          <asp:TextBox ID="cel" runat="server" placeholder="Celular"></asp:TextBox>

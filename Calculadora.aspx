@@ -12,107 +12,15 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
 
      <!-- Css Styles -->
-     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-     <link rel="stylesheet" href="css/flaticon.css" type="text/css">
-     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-     <link rel="stylesheet" href="css/barfiller.css" type="text/css">
-     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-     <link rel="stylesheet" href="calculadora.css" type="text/css">
+     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css"/>
+     <link rel="stylesheet" href="css/flaticon.css" type="text/css"/>
+     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css"/>
+     <link rel="stylesheet" href="css/barfiller.css" type="text/css"/>
+     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css"/>
+     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css"/>
+     <link rel="stylesheet" href="Calculadora.css" type="text/css"/>
 
-        <style>
-        /* Estilos básicos para el formulario y el recuadro de resultados */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-
-        .breadcrumb-section {
-            padding: 40px 0;
-            background: #f9f9f9;
-            text-align: center;
-        }
-
-        .breadcrumb-section h2 {
-            margin: 0;
-        }
-
-        .breadcrumb-section .bt-option a {
-            text-decoration: none;
-            color: #333;
-        }
-
-        .bmi-calculator-section {
-            padding: 40px 0;
-            background: #fff;
-        }
-
-        .bmi-calculator-section .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .bmi-calculator-section .chart-table,
-        .bmi-calculator-section .chart-calculate-form {
-            text-align: center;
-        }
-
-        .chart-table table {
-            margin: auto;
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .chart-table th, .chart-table td {
-            padding: 10px;
-            border: 1px solid #ddd;
-        }
-
-        .chart-calculate-form input,
-        .chart-calculate-form select,
-        .chart-calculate-form button {
-            padding: 10px;
-            margin: 5px;
-            font-size: 1em;
-            width: calc(50% - 22px);
-            box-sizing: border-box;
-        }
-
-        .chart-calculate-form button {
-            width: 100%;
-            background-color: #5cb85c;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        .chart-calculate-form button:hover {
-            background-color: #4cae4c;
-        }
-
-        #result-box {
-            margin-top: 20px;
-            padding: 15px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            background-color: #f9f9f9;
-            text-align: center;
-            font-size: 1.2em;
-        }
-
-        #result {
-            font-weight: bold;
-        }
-    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -182,13 +90,13 @@
                                 <form id="bmi-form">
                                     <div class="row">
                                         <div class="col-sm-6">
-                                            <input type="number" id="height" placeholder="Altura / cm" required>
+                                            <asp:TextBox ID="altura" type="number" runat="server" placeholder="Altura / cm"></asp:TextBox>
                                         </div>
                                         <div class="col-sm-6">
-                                            <input type="number" id="weight" placeholder="Peso / kg" required>
+                                            <asp:TextBox ID="peso" type="number" runat="server" placeholder="Peso / Kg"></asp:TextBox>
                                         </div>
                                         <div class="col-sm-6">
-                                            <input type="number" id="age" placeholder="Edad" required>
+                                            <asp:TextBox ID="edad" type="number" runat="server" placeholder="Edad"></asp:TextBox>
                                         </div>
                                         <div class="col-sm-6">
                                             <select id="sex" required>
@@ -198,7 +106,7 @@
                                             </select>
                                         </div>
                                         <div class="col-lg-12">
-                                            <button type="submit">Calcular</button>
+                                            <asp:Button ID="cal" runat="server" Text="Calcular"/>
                                         </div>
                                     </div>
                                 </form>
@@ -212,47 +120,6 @@
                 </div>
             </section>
             <!-- BMI Calculator Section End -->
-
-            <!-- Js Plugins -->
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-            <script>
-                $(document).ready(function () {
-                    $('#bmi-form').submit(function (event) {
-                        event.preventDefault(); // Evita el envío del formulario
-
-                        // Obtiene los valores de los campos
-                        var height = parseFloat($('#height').val());
-                        var weight = parseFloat($('#weight').val());
-
-                        // Verifica si los valores son válidos
-                        if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
-                            $('#result').text('Por favor, ingresa valores válidos.');
-                            return;
-                        }
-
-                        // Convierte la altura de cm a metros
-                        height = height / 100;
-
-                        // Calcula el IMC
-                        var bmi = weight / (height * height);
-
-                        // Determina la categoría del IMC
-                        var category;
-                        if (bmi < 18.5) {
-                            category = 'Bajo Peso';
-                        } else if (bmi >= 18.5 && bmi <= 24.9) {
-                            category = 'Saludable';
-                        } else if (bmi >= 25.0 && bmi <= 29.9) {
-                            category = 'Exceso de Peso';
-                        } else {
-                            category = 'Obesidad';
-                        }
-
-                        // Muestra el resultado
-                        $('#result').text('Tu IMC es ' + bmi.toFixed(2) + ' (' + category + ')');
-                    });
-                });
-            </script>
         </div>
     </form>
 </body>
