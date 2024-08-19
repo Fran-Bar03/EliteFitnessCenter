@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Runtime.ConstrainedExecution;
 
 
 namespace EliteFitnessCenter
@@ -14,20 +15,10 @@ namespace EliteFitnessCenter
     {
         //Creacion de un nuevo objeto de conexión para la base de datos con sus respectivos parámetros
         string ConexionGym = "user id=sa; password=uts; server=.; database=Gimnasio";
-        
+
         protected void Page_Load(object sender, EventArgs e)
 
         {
-            Usuario user = (Usuario)Session["User"];
-            if(user != null) 
-            {
-                if (user.Tipo_Usuario == 1)
-                {
-                    
-                }
-            }
-
-
             llenarGrid();
         }
 
@@ -41,10 +32,18 @@ namespace EliteFitnessCenter
             {
                 LlamarStoredProcedureTodos();
             }
+            else if (tipoSeleccionado == 1)
+            {
+                LlamarStoredProcedureTipo1();
+            }
+            else if (tipoSeleccionado == 2)
+            {
+                LlamarStoredProcedureTipo2();
+            }
         }
 
 
-        public void llenarGrid() 
+        public void llenarGrid()
         {
             //Nombre de la conexion de la BD
             SqlConnection conngym = new SqlConnection(ConexionGym);
@@ -100,8 +99,8 @@ namespace EliteFitnessCenter
 
             cmd.Connection = conngym;
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "lst_filtroTipoUsuario";
-            cmd.Parameters.AddWithValue("@Tipo", Tipo_Usuario);
+            cmd.CommandText = "Join_Usuarios";
+
             adaptador.SelectCommand = cmd;
             adaptador.Fill(dt);
             GridView_Usuarios.DataSource = dt;
@@ -110,7 +109,7 @@ namespace EliteFitnessCenter
         }
 
 
-        
+
 
         //Método para llamar a un SP diferente en caso de seleccionar todos en el filtro
         private void LlamarStoredProcedureTodos()
@@ -143,6 +142,65 @@ namespace EliteFitnessCenter
             conngym.Close();
         }
 
+        private void LlamarStoredProcedureTipo1()
+        {
+            //Nombre de la conexion de la BD
+            SqlConnection conngym = new SqlConnection(ConexionGym);
+
+            //creacion del comando para realizar el proceso almacenado y otras funciones
+            SqlCommand cmd = new SqlCommand();
+
+            //creacion del puente para insertar los registros en el datatable
+            SqlDataAdapter adaptador = new SqlDataAdapter();
+
+            //Creacion de nuestra tabla
+            DataTable dt = new DataTable();
+
+            if (conngym.State == 0)
+            {
+                //apertura de la conexión
+                conngym.Open();
+            }
+
+            cmd.Connection = conngym;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "Usuarios_Tipo1";
+            adaptador.SelectCommand = cmd;
+            adaptador.Fill(dt);
+            GridView_Usuarios.DataSource = dt;
+            GridView_Usuarios.DataBind();
+            conngym.Close();
+        }
+
+        private void LlamarStoredProcedureTipo2()
+        {
+            //Nombre de la conexion de la BD
+            SqlConnection conngym = new SqlConnection(ConexionGym);
+
+            //creacion del comando para realizar el proceso almacenado y otras funciones
+            SqlCommand cmd = new SqlCommand();
+
+            //creacion del puente para insertar los registros en el datatable
+            SqlDataAdapter adaptador = new SqlDataAdapter();
+
+            //Creacion de nuestra tabla
+            DataTable dt = new DataTable();
+
+            if (conngym.State == 0)
+            {
+                //apertura de la conexión
+                conngym.Open();
+            }
+
+            cmd.Connection = conngym;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "Usuarios_Tipo2";
+            adaptador.SelectCommand = cmd;
+            adaptador.Fill(dt);
+            GridView_Usuarios.DataSource = dt;
+            GridView_Usuarios.DataBind();
+            conngym.Close();
+        }
         protected void GridView_Usuarios_SelectedIndexChanged(object sender, EventArgs e)
         {
 

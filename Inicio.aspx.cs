@@ -17,16 +17,20 @@ namespace EliteFitnessCenter
             {
                 if (user.Tipo_Usuario != 1) // Si es cliente, oculta el panel
                 {
-                    UsuariosLink.Visible = false;
+                    Usuarios.Visible = false;
+                    Aclase.Visible = false;
                 }
                 else  // Si es administrador, muestra el panel
                 {
-                    UsuariosLink.Visible = true;
+                    Usuarios.Visible = true;
+                    Aclase.Visible=true;
                 }
             }
             else 
             {
-                UsuariosLink.Visible= false;
+                Usuarios.Visible= false;
+                Aclase.Visible=false;
+                
             }
         }
     }
