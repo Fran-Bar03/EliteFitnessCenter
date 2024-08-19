@@ -29,21 +29,28 @@
 
              <div class="form-container">
                  <h1>Agregar Clase</h1>
-                 <form>
                      <div class="form-group">
-                         <label for="class-name">Nombre de la Clase:</label>
-                         <input type="text" id="class-name" name="class-name" required>
+                         <label for="class-name">Dia:</label>
+                         <asp:TextBox ID="dia" runat="server" placeholder="dd/MM/yyyy"></asp:TextBox>
                      </div>
                      <div class="form-group">
-                         <label for="instructor-name">Nombre del Instructor:</label>
-                         <input type="text" id="instructor-name" name="instructor-name" required>
+                         <label for="instructor-name">Nombre de la clase:</label>
+                         <asp:TextBox ID="nclase" runat="server"></asp:TextBox>
                      </div>
                      <div class="form-group">
-                         <label for="class-time">Hora de la Clase:</label>
-                         <input type="time" id="class-time" name="class-time" required>
+                         <label for="class-time">Hora inicio de la Clase:</label>
+                          <asp:TextBox ID="horai" runat="server" placeholder="00:00:00"></asp:TextBox>
                      </div>
-                     <button type="submit" class="reserve-button">Publicar</button>
-                 </form>
+                      <div class="form-group">
+                      <label for="class-time">Hora fin de la Clase:</label>
+                      <asp:TextBox ID="horaf" runat="server" placeholder="00:00:00"></asp:TextBox>
+                     </div>
+                      <div class="form-group">
+                      <label for="class-time">Nombre del instructor:</label>
+                      <asp:TextBox ID="ninstructor" runat="server"></asp:TextBox>
+                      </div>
+                     <asp:Button ID="registrar" runat="server" Text="Registrar clase" class="reserve-button" OnClick="registrar_Click" />
+                   <asp:Label ID="mensaje" runat="server" Text="" ForeColor="Orange" ></asp:Label>
              </div>
         </div>
     </form>

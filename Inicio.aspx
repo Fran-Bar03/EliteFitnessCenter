@@ -37,7 +37,7 @@
              <nav class="canvas-menu mobile-menu">
                  <ul>
                                 <li><a href="Inicio.aspx">Inicio</a></li>
-                                <li><a href="Horario.aspx">Clases</a></li>
+                                <li><a href="Clases.aspx">Clases</a></li>
                                 <li><a href="Calculadora.aspx">IMC Calculadora</a></li>
                                 <li><a href="Contactanos.aspx">Contactanos</a></li>
                  </ul>
@@ -59,10 +59,11 @@
                          <nav class="nav-menu">
                              <ul>
                                 <li><a href="Inicio.aspx">Inicio</a></li>
-                                <li><a href="Horario.aspx">Clases</a></li>
+                                <li><a href="Clases.aspx">Clases</a></li>
                                 <li><a href="Calculadora.aspx">IMC Calculadora</a></li>
                                 <li><a href="Contactanos.aspx">Contactanos</a></li>
-                                <li id="UsuariosLink" runat="server"><a href="Usuarios.aspx">Usuarios</a></li>
+                                <li id="Usuarios" runat="server"><a href="Usuarios.aspx">Usuarios</a></li>
+                                  <li id="Aclase" runat="server"><a href="AgregarClase.aspx">AgregarClase</a></li>
                              </ul>
                          </nav>
                      </div>

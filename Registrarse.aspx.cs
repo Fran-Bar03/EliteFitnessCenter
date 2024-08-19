@@ -42,8 +42,8 @@ namespace EliteFitnessCenter
 
                 // Convertir la fecha
                 DateTime fechaNacimiento;
-                if (DateTime.TryParse(fechanac.Text, out fechaNacimiento))
-                {
+                DateTime.TryParse(fechanac.Text, out fechaNacimiento);
+                
                     cmd.Parameters.AddWithValue("@Nombre", nombre.Text);
                     cmd.Parameters.AddWithValue("@APaterno", apaterno.Text);
                     cmd.Parameters.AddWithValue("@AMaterno", amaterno.Text);
@@ -57,11 +57,6 @@ namespace EliteFitnessCenter
                     cmd.ExecuteNonQuery();
 
                     lbmensaje.Text = "Cuenta creada";
-                }
-                else
-                {
-                    lbmensaje.Text = "Fecha de nacimiento no válida.";
-                }
             }
 
             catch (SqlException ex)

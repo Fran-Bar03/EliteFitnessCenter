@@ -147,6 +147,8 @@
     <Content Include="NuevaContraseña.css" />
     <Content Include="Pagos.aspx" />
     <Content Include="Pagos.css" />
+    <Content Include="PlanesAlimenticios.aspx" />
+    <Content Include="PlanesAlimenticios.css" />
     <Content Include="RecuperarContraseña.aspx" />
     <Content Include="RecuperarContraseña.css" />
     <Content Include="Registrarse.aspx" />
@@ -250,6 +252,13 @@
     </Compile>
     <Compile Include="Pagos.aspx.designer.cs">
       <DependentUpon>Pagos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PlanesAlimenticios.aspx.cs">
+      <DependentUpon>PlanesAlimenticios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PlanesAlimenticios.aspx.designer.cs">
+      <DependentUpon>PlanesAlimenticios.aspx</DependentUpon>
     </Compile>
     <Compile Include="RecuperarContraseña.aspx.cs">
       <DependentUpon>RecuperarContraseña.aspx</DependentUpon>
