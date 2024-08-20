@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Gymshark Log In</title>
+    <title>Iniciar Sesión</title>
     <link rel="stylesheet" href="Login.css"/>
 </head>
 <body>
@@ -15,7 +15,7 @@
                 <div class="logo">
                     <!-- Puedes agregar aquí una imagen de logo si es necesario -->
                 </div>
-                <h1>Log In</h1>
+                <h1>Iniciar Sesión</h1>
                 <div class="form-group">
                     <asp:TextBox ID="email" runat="server" CssClass="input-field" placeholder="Correo electrónico"></asp:TextBox>
                 </div>

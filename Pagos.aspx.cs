@@ -16,7 +16,11 @@ namespace EliteFitnessCenter
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Usuario user = (Usuario)Session["user"];
+            if (user == null) 
+            {
+                Response.Redirect("login.aspx");
+            }
         }
 
         protected void Pagar_Click(object sender, EventArgs e)
@@ -35,19 +39,46 @@ namespace EliteFitnessCenter
 
 
             //si la conexion no esta abierta
-            if (conngym.State == 0) 
+            if (conngym.State == 0)
 
-                //Abrir la conexion
+            //Abrir la conexion
             {
                 conngym.Open();
             }
-            
+
+
             cmd.Connection = conngym;
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "Ins_Membresia1";
-            
-            
+            cmd.CommandText = "Ins_DetPagos1";
+            cmd.Parameters.AddWithValue("@Nombre_Titular", nombret.Text);
+            cmd.Parameters.AddWithValue("@Numero_Tarjeta", ntarjeta.Text);
+            cmd.Parameters.AddWithValue("@Monto", monto.Text);
+
+            try
+            {
+                // Ejecución del comando
+                cmd.ExecuteNonQuery();
+
+                // Mostrar mensaje de éxito y redirigir al usuario
+                string script = "alert('Pago exitoso'); window.location='Inicio.aspx';";
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", script, true);
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores (puedes personalizar este mensaje)
+                string script = "alert('Ocurrió un error durante el pago: " + ex.Message + "');";
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", script, true);
+            }
+            finally
+            {
+                // Cerrar la conexión
+                conngym.Close();
+            }
+
+
 
         }
+
+ 
     }
 }

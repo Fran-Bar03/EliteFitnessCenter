@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Horarios</title>
+    <title></title>
 <link rel="stylesheet" href="styles.css"/>
 <link href="Clases.css" rel="stylesheet"/>
 </head>
@@ -13,7 +13,7 @@
     <form id="form1" runat="server">
         <section class="breadcrumb-section">
      <div class="breadcrumb-text">
-         <h2>HORARIOS</h2>
+         <h2>Clases</h2>
          </div>
      </div>
  </section>
