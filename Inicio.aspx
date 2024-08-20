@@ -37,7 +37,7 @@
              <nav class="canvas-menu mobile-menu">
                  <ul>
                                 <li><a href="Inicio.aspx">Inicio</a></li>
-                                <li><a href="Horario.aspx">Clases</a></li>
+                                <li><a href="Clases.aspx">Clases</a></li>
                                 <li><a href="Calculadora.aspx">IMC Calculadora</a></li>
                                 <li><a href="Contactanos.aspx">Contactanos</a></li>
                  </ul>
@@ -59,13 +59,18 @@
                          <nav class="nav-menu">
                              <ul>
                                 <li><a href="Inicio.aspx">Inicio</a></li>
-                                <li><a href="Horario.aspx">Clases</a></li>
+                                <li><a href="Clases.aspx">Clases</a></li>
                                 <li><a href="Calculadora.aspx">IMC Calculadora</a></li>
                                 <li><a href="Contactanos.aspx">Contactanos</a></li>
                                 <li id="UsuariosLink" runat="server"><a href="Usuarios.aspx">Usuarios</a></li>
                              </ul>
                          </nav>
                      </div>
+                     <div class="col-lg-3">
+                            <div class="header-right">
+                                <asp:Button ID="cerrar" runat="server" Text="Cerrar Sesion" OnClick="cerrar_Click" />
+                            </div>
+                        </div>
 
                  <div class="canvas-open">
                      <i class="fa fa-bars"></i>

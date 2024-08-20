@@ -23,11 +23,11 @@
             <div class="form-row">
                 <div class="form-group">
                     <label for="name">Nombre del titular:</label>
-                    <input id="name" type="text" runat="server"  />
+                    <asp:TextBox ID="nombret" runat="server" required></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <label for="card-number">Número de tarjeta:</label>
-                    <input id="cardNumber" type="text" placeholder="xxxx-xxxx-xxxx-xxxx" runat="server" required />
+                    <asp:TextBox ID="ntarjeta" runat="server" required></asp:TextBox>
                 </div>
             </div>
             <div class="form-group">
@@ -37,10 +37,6 @@
             <div class="form-group">
                 <label for="cvv">Código de seguridad:</label>
                 <input id="cvv" type="text" placeholder="123" runat="server" required />
-                <div class="form-group">
-                    <label for="paymentMethod">Método de Pago:</label>
-                   <asp:TextBox ID="Metodopago" runat="server"></asp:TextBox>
-                </div>
             </div>
            <asp:Button ID="Pagar" runat="server" Text="Pagar" type="submit" class="pay-button" OnClick="Pagar_Click"/>
             <div class="security-notice">

@@ -16,6 +16,9 @@ namespace EliteFitnessCenter
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Usuario user = (Usuario)Session["user"];
+            if(user==null)
+                Response.Redirect("login.aspx");
 
         }
 
@@ -44,7 +47,13 @@ namespace EliteFitnessCenter
             
             cmd.Connection = conngym;
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "Ins_Membresia1";
+            cmd.CommandText = "Ins_Pagos2";
+            cmd.Parameters.AddWithValue("@Nombre_Titular",nombret.Text);
+            cmd.Parameters.AddWithValue("@Numero_Tarjeta", ntarjeta.Text);
+
+            Response.Write("<script>alert('Pago exitoso')</script>");
+
+            cmd.ExecuteNonQuery();
             
             
 

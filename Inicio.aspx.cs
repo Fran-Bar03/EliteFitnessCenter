@@ -26,8 +26,16 @@ namespace EliteFitnessCenter
             }
             else 
             {
+                Response.Redirect("Login.aspx");
                 UsuariosLink.Visible= false;
             }
+        }
+
+        protected void cerrar_Click(object sender, EventArgs e)
+        {
+            Session["user"] = null;
+            Response.Redirect("Login.aspx");
+
         }
     }
 }
