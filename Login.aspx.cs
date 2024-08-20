@@ -33,7 +33,7 @@ namespace EliteFitnessCenter
 
             }
 
-            else if (user != null)
+           if (user != null)
             {
                 Response.Redirect("Inicio.aspx");
             }

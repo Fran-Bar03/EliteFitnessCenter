@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-   <title>Gymshark Password Recovery</title>
+   <title>Recuperar Contraseña</title>
 <link rel="stylesheet" href="RecuperarContraseña.css"/>
 </head>
 <body>

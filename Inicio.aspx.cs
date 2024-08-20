@@ -30,8 +30,15 @@ namespace EliteFitnessCenter
             {
                 Usuarios.Visible= false;
                 Aclase.Visible=false;
+                Response.Redirect("Login.aspx");
                 
             }
+        }
+
+        protected void cerrar_Click(object sender, EventArgs e)
+        {
+            Session["user"] = null;
+            Response.Redirect("Login.aspx");
         }
     }
 }
