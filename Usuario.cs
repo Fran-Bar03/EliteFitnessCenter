@@ -7,7 +7,7 @@ namespace EliteFitnessCenter
 {
     public class Usuario
     {
-
+        public int ID_Usuario { get; set; }
         private string email;
         private string contraseña;
         private int tipo_usuario;
