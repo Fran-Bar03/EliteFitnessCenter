@@ -67,6 +67,11 @@
                              </ul>
                          </nav>
                      </div>
+                     <div class="col-lg-3">
+                            <div class="header-right">
+                                <asp:Button ID="cerrar" runat="server" Text="Cerrar Sesion" OnClick="cerrar_Click" />
+                            </div>
+                        </div>
 
 
                       <div class="col-lg-3">

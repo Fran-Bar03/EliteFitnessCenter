@@ -27,13 +27,17 @@ namespace EliteFitnessCenter
             if (!IsPostBack)
             {
                 // Cierra la sesión actual si el usuario regresa a la página de login
-                Session.Clear();
-                Session.Abandon();
+               // Session.Clear();
+               // Session.Abandon();
 
 
             }
 
+
+            if (user != null)
+
            if (user != null)
+
             {
                 Response.Redirect("Inicio.aspx");
             }

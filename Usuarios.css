@@ -20,20 +20,21 @@
         margin: 0;
     }
 
-.search-bar {
+.search-bar{
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
     gap: 10px;
 }
 
-    .search-bar input {
+    .search-bar {
         width: 300px;
         border: none;
         border-radius: 25px 0 0 25px;
         padding: 10px 20px;
         background-color: #fff; /* Gris oscuro */
-        color: #fff; /* Blanco */
+        color: black; /* Blanco */
     }
 
     .search-bar select {
@@ -44,7 +45,7 @@
         color: #fff; /* Blanco */
     }
 
-    .search-bar button {
+    .search-bar, .btnBuscar {
         border: none;
         border-radius: 0 25px 25px 0;
         padding: 10px 20px;
@@ -53,7 +54,7 @@
         cursor: pointer;
     }
 
-        .search-bar button:hover {
+        .search-bar, .btnBuscar:hover {
             background-color: # fff;
         }
 
@@ -87,6 +88,9 @@
     background-color: #333; /* Gris oscuro */
     color: #fff; /* Blanco */
     text-align: center;
+
+
+
 
 }
 

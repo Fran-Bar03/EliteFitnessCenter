@@ -28,10 +28,14 @@ namespace EliteFitnessCenter
             }
             else 
             {
+                Response.Redirect("Login.aspx");
+                UsuariosLink.Visible= false;
+
                 Usuarios.Visible= false;
                 Aclase.Visible=false;
                 Response.Redirect("Login.aspx");
                 
+
             }
         }
 
@@ -39,6 +43,7 @@ namespace EliteFitnessCenter
         {
             Session["user"] = null;
             Response.Redirect("Login.aspx");
+
         }
     }
 }
