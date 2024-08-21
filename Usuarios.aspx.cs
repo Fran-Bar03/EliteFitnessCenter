@@ -425,7 +425,7 @@ namespace EliteFitnessCenter
 
             if (rowsAffected > 0)
             {
-                Response.Write("<script>alert('Usuario actualizado');</script>");
+                Response.Write("<script>alert('Usuario Eliminado');</script>");
             }
             else
             {
