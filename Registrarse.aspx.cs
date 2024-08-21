@@ -57,6 +57,10 @@ namespace EliteFitnessCenter
                     cmd.ExecuteNonQuery();
 
                     lbmensaje.Text = "Cuenta creada";
+
+                
+
+
             }
 
             catch (SqlException ex)

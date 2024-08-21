@@ -24,22 +24,37 @@ namespace EliteFitnessCenter
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+
+        /// Control nombret.
+
         /// Control VisaImage.
+
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
+
+        protected global::System.Web.UI.WebControls.TextBox nombret;
+
+        /// <summary>
+        /// Control ntarjeta.
+
         protected global::System.Web.UI.WebControls.Image VisaImage;
 
         /// <summary>
         /// Control MasterCardImage.
+
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
+
+        protected global::System.Web.UI.WebControls.TextBox ntarjeta;
+
         protected global::System.Web.UI.WebControls.Image MasterCardImage;
+
 
         /// <summary>
         /// Control AmexImage.
@@ -105,6 +120,8 @@ namespace EliteFitnessCenter
         protected global::System.Web.UI.WebControls.TextBox cvv;
 
         /// <summary>
+
+
         /// Control Mpago.
         /// </summary>
         /// <remarks>
@@ -114,6 +131,7 @@ namespace EliteFitnessCenter
         protected global::System.Web.UI.WebControls.DropDownList Mpago;
 
         /// <summary>
+
         /// Control Pagar.
         /// </summary>
         /// <remarks>

@@ -24,13 +24,21 @@ namespace EliteFitnessCenter
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+
+        /// Control TextBox1.
+
         /// Control buscador.
+
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
+
+        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+
         protected global::System.Web.UI.WebControls.TextBox buscador;
+
 
         /// <summary>
         /// Control DropDownList_Filtro.
@@ -42,13 +50,21 @@ namespace EliteFitnessCenter
         protected global::System.Web.UI.WebControls.DropDownList DropDownList_Filtro;
 
         /// <summary>
+
+        /// Control Buscar.
+
         /// Control buscar.
+
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
+
+        protected global::System.Web.UI.WebControls.Button Buscar;
+
         protected global::System.Web.UI.WebControls.Button buscar;
+
 
         /// <summary>
         /// Control lbNombre.
