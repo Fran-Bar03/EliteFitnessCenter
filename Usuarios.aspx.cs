@@ -41,8 +41,8 @@ namespace EliteFitnessCenter
                 LlamarStoredProcedureTipo2();
             }
         }
-
-
+        
+        
         public void llenarGrid()
         {
             //Nombre de la conexion de la BD
@@ -87,7 +87,7 @@ namespace EliteFitnessCenter
 
             //creacion del puente para insertar los registros en el datatable
             SqlDataAdapter adaptador = new SqlDataAdapter();
-
+            
             //Creacion de nuestra tabla
             DataTable dt = new DataTable();
 
