@@ -364,44 +364,99 @@ namespace EliteFitnessCenter
 
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
-            //Nombre de la conexion de la BD
+            // Nombre de la conexión de la BD
             SqlConnection conngym = new SqlConnection(ConexionGym);
 
-            //creacion del comando para realizar el proceso almacenado y otras funciones
+            // Creación del comando para realizar el proceso almacenado y otras funciones
             SqlCommand cmd = new SqlCommand();
 
-            if (conngym.State == 0)
-            {
-                //apertura de la conexión
+            
+            
                 conngym.Open();
-            }
+                cmd.Connection = conngym;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "Upd_Usuarios";
 
+                // Añadir los parámetros al comando
+                cmd.Parameters.AddWithValue("@Email", tbEmail.Text);
+                cmd.Parameters.AddWithValue("@Nombre",  tbNombre.Text);
+                cmd.Parameters.AddWithValue("@APaterno",  tbaPaterno.Text);
+                cmd.Parameters.AddWithValue("@AMaterno",  tbaMaterno.Text);
+                cmd.Parameters.AddWithValue("@Contraseña", tbPassword.Text);
+                cmd.Parameters.AddWithValue("@Celular",  tbCelular.Text);
+                cmd.Parameters.AddWithValue("@Peso",  tbPeso.Text);
+                cmd.Parameters.AddWithValue("@Altura",  tbAltura.Text);
+                cmd.Parameters.AddWithValue("@Tipo_Usuario",  tbTipo.Text);
+                
+                // Ejecutar el comando
+                int rowsAffected = cmd.ExecuteNonQuery();
 
-            cmd.Connection = conngym;
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "Upd_Usuarios";
-            cmd.Parameters.AddWithValue("Email", tbEmail.Text);
-            cmd.Parameters.AddWithValue("@Nombre", tbNombre.Text);
-            cmd.Parameters.AddWithValue("@APaterno", tbaPaterno.Text);
-            cmd.Parameters.AddWithValue("@AMaterno", tbaMaterno.Text);
-            cmd.Parameters.AddWithValue("@Contraseña", tbPassword.Text);
-            cmd.Parameters.AddWithValue("@Celular", tbCelular.Text);
-            cmd.Parameters.AddWithValue("@Peso",tbPeso.Text);
-            cmd.Parameters.AddWithValue("@Altura",tbAltura.Text);
-            cmd.Parameters.AddWithValue("@Tipo_Usuario", tbTipo.Text);
-
-
-            Response.Write("<script>alert('Usuario actualizado');</script>");
-
+                if (rowsAffected > 0)
+                {
+                    Response.Write("<script>alert('Usuario actualizado');</script>");
+                }
+                else
+                {
+                    Response.Write("<script>alert('No se encontró el usuario');</script>");
+                }
+            
+            
+                conngym.Close();
+            
+            
             LimpiarTextBoxes(this);
-
-            conngym.Close();
         }
 
 
 
 
         
+
+        protected void btnBorrar_Click(object sender, EventArgs e)
+        {
+            // Nombre de la conexión de la BD
+            SqlConnection conngym = new SqlConnection(ConexionGym);
+
+            // Creación del comando para realizar el proceso almacenado y otras funciones
+            SqlCommand cmd = new SqlCommand();
+
+            // Obtener la fila seleccionada del GridView
+            GridViewRow row = GridView_Usuarios.SelectedRow;
+
+            // Extraer el email de la fila seleccionada (asegúrate de que el índice es correcto)
+            string email = row.Cells[3].Text; // Ajusta el índice según la columna del email en tu GridView
+
+
+
+
+            conngym.Open();
+            cmd.Connection = conngym;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "Del_Usuarios";
+            cmd.Parameters.AddWithValue("@Email", tbEmail.Text);
+
+
+
+            // Ejecutar el comando
+            int rowsAffected = cmd.ExecuteNonQuery();
+
+            if (rowsAffected > 0)
+            {
+                Response.Write("<script>alert('Usuario Eliminado');</script>");
+            }
+            else
+            {
+                Response.Write("<script>alert('No se encontró el usuario');</script>");
+            }
+
+
+            conngym.Close();
+
+            llenarGrid();
+
+
+
+            LimpiarTextBoxes(this);
 
         protected void btnBorrar_Click(object sender, EventArgs e)
         {
@@ -513,6 +568,7 @@ namespace EliteFitnessCenter
 
         protected void btnBorrar_Click(object sender, EventArgs e)
         {
+
 
         }
 
