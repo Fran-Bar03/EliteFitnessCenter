@@ -87,3 +87,28 @@
     background-color: #333; /* Gris oscuro */
     color: #fff; /* Blanco */
     text-align: center;
+
+}
+
+/* Estilo para el contenedor principal */
+.insertarUsuarios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 20px;
+    width: 400px; /* Ancho máximo del formulario */
+    border: 1px solid #ccc; /* Borde solo para el div exterior */
+    border-radius: 10px;
+    background-color: #1a1a1a;
+}
+
+/* Contenedor principal que alinea los elementos en columna */
+.datos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinea las etiquetas y text boxes hacia la izquierda */
+    margin-bottom: 15px;
+}
+
