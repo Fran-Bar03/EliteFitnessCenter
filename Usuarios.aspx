@@ -6,7 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Usuarios</title>
-    <link rel="stylesheet" href="Usuarios.css"/>
+    <link rel="stylesheet" href="Usuario.css"/>
     </head>
 <body>
     <form id="form1" runat="server">
@@ -31,7 +31,7 @@
         <!-- Tabla para CRUD-->
         <div class="insertarUsuarios">
     <div id="insercion" class="datos">
-        <div id="nombre" class="datos">
+        <div id="nombre" class="datos
             <asp:Label ID="lbNombre" runat="server" Text="Nombre:"></asp:Label>
             <asp:TextBox ID="tbNombre" AutoPostBack="false" runat="server" Required="True"></asp:TextBox>
         </div>
@@ -84,8 +84,17 @@
 </div>
         <div class="table-container">
             
-            <asp:GridView ID="GridView_Usuarios" runat="server" AutoGenerateColumns="true" Width="443px" OnSelectedIndexChanged="GridView_Usuarios_SelectedIndexChanged">
+            <asp:GridView ID="GridView_Usuarios" runat="server" Width="443px" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView_Usuarios_SelectedIndexChanged">
                 <Columns>
+                    <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
+                    <asp:BoundField DataField="APaterno" HeaderText="Apellido Paterno" />
+                    <asp:BoundField DataField="AMaterno" HeaderText="Apellido Materno" />
+                    <asp:BoundField DataField="Email" HeaderText="Email" />
+                     <asp:BoundField DataField="Celular" HeaderText="Celular" />
+                      <asp:BoundField DataField="Tipo_Membresia" HeaderText="Membresia" />
+                      <asp:BoundField DataField="Fecha_Inicio" HeaderText="Fecha Inicio" />
+                      <asp:BoundField DataField="Fecha_Vencimiento" HeaderText="Fecha Vencimiento" />
+                    <asp:CommandField HeaderText="Datos" ShowSelectButton="True" />
              
                 </Columns>
             </asp:GridView>

@@ -203,7 +203,48 @@ namespace EliteFitnessCenter
         }
         protected void GridView_Usuarios_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Obtener la fila seleccionada del GridView
+            GridViewRow row = GridView_Usuarios.SelectedRow;
 
+            // Extraer datos de la fila seleccionada
+            string email = row.Cells[3].Text;
+
+            // Nombre de la conexión de la BD
+            SqlConnection conngym = new SqlConnection(ConexionGym);
+
+
+            // Abrir la conexión y ejecutar el procedimiento almacenado
+            conngym.Open();
+
+            // Crear y configurar el comando
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conngym;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "Datos_Usuarios";
+                
+                cmd.Parameters.AddWithValue("@Email", email);
+               
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    // Llenar los TextBox con los valores obtenidos
+                    tbNombre.Text = reader["Nombre"].ToString();
+                    tbaPaterno.Text = reader["APaterno"].ToString();
+                    tbaMaterno.Text = reader["AMaterno"].ToString();
+                    tbfNac.Text = reader["FechaNacimiento"].ToString();
+                    tbEmail.Text = reader["Email"].ToString();
+                    tbPassword.Text = reader["Contraseña"].ToString();
+                    tbCelular.Text = reader["Celular"].ToString();
+                    tbPeso.Text = reader["Peso"].ToString();
+                    tbAltura.Text = reader["Altura"].ToString();
+                    tbTipo.Text = reader["Tipo_Usuario"].ToString();
+                }
+            
+            
+                // Asegurarse de cerrar la conexión
+                conngym.Close();
+            
         }
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
@@ -279,7 +320,7 @@ namespace EliteFitnessCenter
         }
 
 
-
+        
 
 
         protected void LimpiarTextBoxes(Control parent)
@@ -306,13 +347,44 @@ namespace EliteFitnessCenter
 
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
+            //Nombre de la conexion de la BD
+            SqlConnection conngym = new SqlConnection(ConexionGym);
 
+            //creacion del comando para realizar el proceso almacenado y otras funciones
+            SqlCommand cmd = new SqlCommand();
+
+            if (conngym.State == 0)
+            {
+                //apertura de la conexión
+                conngym.Open();
+            }
+
+
+            cmd.Connection = conngym;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "Upd_Usuarios";
+            cmd.Parameters.AddWithValue("Email", tbEmail.Text);
+            cmd.Parameters.AddWithValue("@Nombre", tbNombre.Text);
+            cmd.Parameters.AddWithValue("@APaterno", tbaPaterno.Text);
+            cmd.Parameters.AddWithValue("@AMaterno", tbaMaterno.Text);
+            cmd.Parameters.AddWithValue("@Contraseña", tbPassword.Text);
+            cmd.Parameters.AddWithValue("@Celular", tbCelular.Text);
+            cmd.Parameters.AddWithValue("@Peso",tbPeso.Text);
+            cmd.Parameters.AddWithValue("@Altura",tbAltura.Text);
+            cmd.Parameters.AddWithValue("@Tipo_Usuario", tbTipo.Text);
+
+
+            Response.Write("<script>alert('Usuario actualizado');</script>");
+
+            LimpiarTextBoxes(this);
+
+            conngym.Close();
         }
 
 
 
 
-
+        
 
         protected void btnBorrar_Click(object sender, EventArgs e)
         {
