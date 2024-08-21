@@ -20,7 +20,7 @@
      <link rel="stylesheet" href="css/magnific-popup.css" type="text/css"/>
      <link rel="stylesheet" href="css/slicknav.min.css" type="text/css"/>
      <link rel="stylesheet" href="Calculadora.css" type="text/css"/>
-
+    
 </head>
 <body>
     <form id="form1" runat="server">
@@ -90,13 +90,13 @@
                                 <form id="bmi-form">
                                     <div class="row">
                                         <div class="col-sm-6">
-                                            <asp:TextBox ID="altura" type="number" runat="server" placeholder="Altura / cm"></asp:TextBox>
+                                            <asp:TextBox ID="altura" runat="server" placeholder="Altura / cm"></asp:TextBox>
                                         </div>
                                         <div class="col-sm-6">
-                                            <asp:TextBox ID="peso" type="number" runat="server" placeholder="Peso / Kg"></asp:TextBox>
+                                            <asp:TextBox ID="peso" runat="server" placeholder="Peso / Kg"></asp:TextBox>
                                         </div>
                                         <div class="col-sm-6">
-                                            <asp:TextBox ID="edad" type="number" runat="server" placeholder="Edad"></asp:TextBox>
+                                            <asp:TextBox ID="edad"  runat="server" placeholder="Edad"></asp:TextBox>
                                         </div>
                                         <div class="col-sm-6">
                                             <select id="sex" required>
@@ -106,13 +106,16 @@
                                             </select>
                                         </div>
                                         <div class="col-lg-12">
-                                            <asp:Button ID="cal" runat="server" Text="Calcular"/>
+                                            <asp:Button ID="cal" runat="server" Text="Calcular" OnClick="cal_Click"/>
                                         </div>
                                     </div>
                                 </form>
                                 <!-- Recuadro para mostrar el resultado -->
                                 <div id="result-box">
-                                    <p id="result">Tu IMC aparecerá aquí.</p>
+                                    <asp:Label ID="Rimc" runat="server" Text="Tu resultado aparecera aqui" ForeColor="Orange"></asp:Label>
+                                </div>
+                                <div>
+                                    <asp:Label ID="Rrango" runat="server" forecolor="Orange"></asp:Label>
                                 </div>
                             </div>
                         </div>

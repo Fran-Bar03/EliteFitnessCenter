@@ -11,7 +11,7 @@ namespace EliteFitnessCenter
 {
 
 
-    public partial class Clases
+    public partial class PlanesAlimenticios
     {
 
         /// <summary>
@@ -22,14 +22,5 @@ namespace EliteFitnessCenter
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
-        /// <summary>
-        /// Control GridView_Clases.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView_Clases;
     }
 }
